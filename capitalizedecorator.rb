@@ -9,7 +9,7 @@ class CapitalizeDecorator < BaseDecorator
   end
 
   def correct_name
-    @name = @name.upcase
+    @name = @name.capitalize
     @name
   end
 end

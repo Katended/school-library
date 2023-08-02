@@ -9,6 +9,6 @@ class TrimmerDecorator < BaseDecorator
   end
 
   def correct_name
-    @name[1..10]
+    @name[0..9]
   end
 end
