@@ -90,6 +90,7 @@ class Main
     age = gets.chomp.to_i
     print 'Name: '
     name = gets.chomp
+
     print 'Has parent permission? [Y/N]: '
     parent_permission = gets.chomp.downcase == 'y'
     print 'Classroom: '
