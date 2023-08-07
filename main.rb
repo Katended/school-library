@@ -5,7 +5,6 @@ class Options
 
     puts
     puts 'WELCOME TO THE SCHOOL LIBRARY APP!'
-    show_menu
   end
 
   def show_menu
@@ -43,10 +42,15 @@ class Options
       @app.send(method)
     end
   end
+
+  def exit_app
+    puts 'Thank you! Have a great day!'
+    exit(0)
+  end
 end
 
 def main
-  Options.new
+  Options.new.show_menu
 end
 
 main
