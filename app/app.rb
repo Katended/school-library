@@ -15,7 +15,7 @@ class App
       show_menu
       user_choice = gets.chomp
       handle_option(user_choice)
-    end    
+    end
   end
 
   def show_menu
@@ -28,7 +28,7 @@ class App
     puts '5 - Create a rental'
     puts '6 - List all rentals for a given person id'
     puts '7 - Exit'
-    puts  
+    puts
   end
 
   def handle_option(user_choice)
@@ -51,7 +51,6 @@ class App
       puts 'Invalid option, please try again!'
     end
   end
-
 
   def list_all_books
     if @books_list.empty?
