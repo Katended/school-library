@@ -6,10 +6,10 @@ require_relative 'src/book'
 require_relative 'src/rental'
 
 class Main
-  def initialize   
+  def initialize
     puts
     puts 'WELCOME TO THE SCHOOL LIBRARY APP!'
-     @app = App.new(self)
+    @app = App.new(self)
     show_menu
   end
 
@@ -28,7 +28,6 @@ class Main
     user_choice = gets.chomp
 
     select_option(user_choice)
-
   end
 
   def select_option(user_choice)
@@ -48,7 +47,7 @@ class Main
       puts
       show_menu
     else
-      self.send(method)
+      send(method)
     end
   end
 
@@ -73,47 +72,45 @@ class Main
 
     person_options = {
       '1' => :create_student,
-      '2' => :create_teache  
+      '2' => :create_teache
     }
 
     method = person_options[person_role]
-
     if method.nil?
-      puts 'Please add a valid input!'
-      puts
-      show_menu    
-    end
-
-    case person_role
-    when '1'
-
-      print 'Age: '
-      age = gets.chomp.to_i
-      print 'Name: '
-      name = gets.chomp
-      print 'Has parent permission? [Y/N]: '
-      parent_permission = gets.chomp.downcase == 'y'
-      print 'Classroom: '
-      classroom = gets.chomp.to_i
-      @app.add_people_list(Student.new(age, classroom, name, parent_permission: parent_permission))
-      puts
-      puts 'Person created successfully'
-
-    when '2'
-
-      print 'Age: '
-      age = gets.chomp
-      print 'Name: '
-      name = gets.chomp
-      print 'Specialization: '
-      specialization = gets.chomp
-      @app.add_people_list(Teacher.new(age, specialization, name, parent_permission: true))    
-      puts
-      puts 'Person created successfully'
+      puts 'Please enter a valid input!'
+      show_menu
     else
-      puts 'Please add a valid input!'
-    end    
-     show_menu
+      send(method)
+    end
+    puts
+  end
+
+  def create_student
+    print 'Age: '
+    age = gets.chomp.to_i
+    print 'Name: '
+    name = gets.chomp
+    print 'Has parent permission? [Y/N]: '
+    parent_permission = gets.chomp.downcase == 'y'
+    print 'Classroom: '
+    classroom = gets.chomp.to_i
+    @app.add_people_list(Student.new(age, classroom, name, parent_permission: parent_permission))
+    puts
+    puts 'Person created successfully'
+    show_menu
+  end
+
+  def create_teacher
+    print 'Age: '
+    age = gets.chomp
+    print 'Name: '
+    name = gets.chomp
+    print 'Specialization: '
+    specialization = gets.chomp
+    @app.add_people_list(Teacher.new(age, specialization, name, parent_permission: true))
+    puts
+    puts 'Person created successfully'
+    show_menu
   end
 
   def create_book
@@ -125,7 +122,7 @@ class Main
     puts 'Book created successfully'
     show_menu
   end
-  
+
   def create_rental
     puts 'Select a book from the following list by number'
     @app.books_list.each_with_index { |book, index| puts "#{index}) Title: '#{book.title}', Author: #{book.author}" }
