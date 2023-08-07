@@ -146,6 +146,4 @@ class Main
     exit(0)
   end
 end
-
-
 Main.new
