@@ -15,10 +15,6 @@ class Person < Nameable
     @rentals = []
   end
 
-  def can_use_services?
-    of_age? || @parent_permission
-  end
-
   def correct_name
     @name
   end
