@@ -43,20 +43,14 @@ class App
 
   def add_people_list(person)
     @people_list.push(person)
-    # @filemanager.filewriter = PersonWriter.new(@people_list)
-    # @filemanager.create
   end
 
   def add_book_list(book)
     @books_list.push(book)
-    # @filemanager.filewriter = BookWriter.new(@books_list)
-    # @filemanager.create
   end
 
   def add_rental_list(rental)
     @rentals_list.push(rental)
-    # @filemanager.filewriter = RentalWriter.new(@rentals_list)
-    # @filemanager.create
   end
 
   def save_data
