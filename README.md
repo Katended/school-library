@@ -7,6 +7,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+    - [Future Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -33,6 +34,14 @@ This project featues basic functionality of a school library
 - **Add new students or teachers**
 - **Add new books**
 - **Save records to storate**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Future Features <a name="future-features"></a>
+
+- **Add unit tests**
+- **Database storage**
+- **Consolidate data writers into one interface**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
