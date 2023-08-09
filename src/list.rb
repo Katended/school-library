@@ -1,13 +1,8 @@
-require_relative '../app/filemanager'
 require 'pry'
 
 class List
   def initialize(parent)
     @parent = parent
-    @dmanager = FileManager.new
-    @parent.books_list = @dmanager.books_list
-    @parent.people_list = @dmanager.people_list
-    @parent.rentals_list = @dmanager.rentals_list
   end
 
   def books
@@ -20,8 +15,6 @@ class List
   end
 
   def people
-    @parent.people_list = PersonWriter.new(nil).read
-
     if @parent.people_list.empty?
       puts 'No record found! Add a person...'
     else
@@ -37,11 +30,15 @@ class List
 
   def rentals
     print 'ID of person: '
-    id = gets.chomp.to_i
+
     puts 'Rentals:'
 
-    @parent.rentals_list.each do |rental|
-      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
+    if @parent.rentals_list.empty?
+      puts 'No record found! Add a rental...'
+    else
+      @parent.rentals_list.each do |rental|
+        puts "Date: #{rental.date}, Book \"#{rental.book}\" "
+      end
     end
   end
 end

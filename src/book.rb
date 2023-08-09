@@ -13,14 +13,14 @@ class Book
 
   def self.from_json(json)
     data = JSON.parse(json)
-    new(data['title'], data['author'], data['name'])
+    new(data['title'], data['author'])
   end
 
   def as_json(_options = {})
     {
       type: 'Book',
-      name: @title,
-      age: @author,
+      title: @title,
+      author: @author,
       rentals: @rentals
     }
   end

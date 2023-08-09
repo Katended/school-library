@@ -4,7 +4,7 @@ require_relative 'src/teacher'
 require_relative 'src/student'
 require_relative 'src/book'
 require_relative 'src/rental'
-
+require 'pry'
 class Main
   def initialize
     puts
@@ -38,7 +38,7 @@ class Main
       '4' => :create_book,
       '5' => :create_rental,
       '6' => :list_all_rentals,
-      '7' => :exit
+      '7' => :exit_app
     }
 
     method = options[user_choice]
@@ -136,12 +136,13 @@ class Main
     person_num = gets.chomp.to_i
     print 'Date: '
     date = gets.chomp
-    @app.add_rental_list(Rental.new(date, @app.books_list[book_num], @app.people_list[person_num]))
+    @app.add_rental_list(Rental.new(date, @app.books_list[book_num].title, @app.people_list[person_num]))
     puts 'Rental created successfully'
     show_menu
   end
 
   def exit_app
+    @app.save_data
     puts 'Thank you! Have a great day!'
     exit(0)
   end

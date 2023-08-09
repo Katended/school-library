@@ -2,8 +2,7 @@ require './src/person'
 require 'json'
 require 'pry'
 class PersonWriter
-  def initialize(people_list)
-    @people_list = people_list
+  def initialize
     @file_path = './data/people.json'
   end
 
@@ -20,7 +19,7 @@ class PersonWriter
     people
   end
 
-  def create
-    File.write(@file_path, JSON.generate(@people_list.map(&:as_json)))
+  def create(data)
+    File.write(@file_path, JSON.generate(data.map(&:as_json)))
   end
 end

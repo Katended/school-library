@@ -1,1 +1,1 @@
-[{"type":"Rental","date":"2020-02-02","book":"#<Book:0x065b5fe4>","person":"#<Student:0x065b420c>"}]
+[{"type":"Student","id":597,"name":"David","age":22,"parent_permission":true,"classroom":3},{"type":"Student","id":697,"name":"David","age":22,"parent_permission":true,"classroom":3}]

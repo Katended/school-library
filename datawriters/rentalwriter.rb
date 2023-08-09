@@ -1,12 +1,14 @@
+require './src/rental'
 require 'json'
 
 class RentalWriter
-  def initialize(rentals_list)
-    @rentals_list = rentals_list
+  def initialize
     @file_path = './data/rentals.json'
   end
 
   def read
+    return [] unless File.exist?(@file_path) && !File.empty?(@file_path)
+
     rentals = []
     File.open(@file_path, 'r') do |file|
       JSON.parse(file.read).each do |data|
@@ -17,7 +19,7 @@ class RentalWriter
     rentals
   end
 
-  def create
-    File.write(@file_path, JSON.generate(@rentals_list.map(&:as_json)))
+  def create(data)
+    File.write(@file_path, JSON.generate(data.map(&:as_json)))
   end
 end
