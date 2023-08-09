@@ -33,7 +33,7 @@ This project featues basic functionality of a school library
 
 - **Add new students or teachers**
 - **Add new books**
-- **Save records to storate**
+- **Save data to JSON files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
