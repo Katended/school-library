@@ -31,9 +31,7 @@ class Person < Nameable
     end
   end
 
-  private
-
-  def of_age?
+  def can_use_services?
     @age >= 18
   end
 
