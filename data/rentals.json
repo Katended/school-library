@@ -1,0 +1,1 @@
+[{"type":"Rental","date":"2020-02-02","book":"#<Book:0x06c126bc>","person":{"person":{"person":"#<Student:0x06c11fa0>"}}},{"type":"Rental","date":"2020-01-02","book":"Even Demon Believe","person":{"person":"#<Student:0x06d11d9c>"}}]

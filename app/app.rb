@@ -1,26 +1,44 @@
 require_relative '../src/list'
+require_relative 'filemanager'
+require_relative '../datawriters/bookwriter'
+require_relative '../datawriters/personwriter'
+require_relative '../datawriters/rentalwriter'
+require 'pry'
 
 class App
-  attr_reader :books_list, :people_list
+  attr_accessor :books_list, :people_list, :rentals_list
 
   def initialize(parent)
     @parent = parent
     @books_list = []
     @people_list = []
     @rentals_list = []
-    @list = List.new
+
+    initialize_data
+    @list = List.new(self)
+  end
+
+  def initialize_data
+    @books_manager = FileManager.new(BookWriter.new)
+    @books_list = @books_manager.read
+
+    @people_manager = FileManager.new(PersonWriter.new)
+    @people_list = @people_manager.read
+
+    @rentals_manager = FileManager.new(RentalWriter.new)
+    @rentals_list = @rentals_manager.read
   end
 
   def list_all_people
-    @list.people(@people_list)
+    @list.people
   end
 
   def list_all_books
-    @list.books(@books_list)
+    @list.books
   end
 
   def list_all_rentals
-    @list.rentals(@rentals_list)
+    @list.rentals
   end
 
   def add_people_list(person)
@@ -33,5 +51,11 @@ class App
 
   def add_rental_list(rental)
     @rentals_list.push(rental)
+  end
+
+  def save_data
+    @books_manager.create(@books_list)
+    @people_manager.create(@people_list)
+    @rentals_manager.create(@rentals_list)
   end
 end

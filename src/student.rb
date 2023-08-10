@@ -1,5 +1,5 @@
 require_relative 'person'
-
+require 'pry'
 class Student < Person
   attr_reader :classroom
 
@@ -19,5 +19,21 @@ class Student < Person
   def classroom=(classroom)
     @classroom = classroom
     classroom.students.push(self) unless classroom.students.include?(self)
+  end
+
+  def self.from_json(json)
+    data = JSON.parse(json)
+    new(data['age'], data['classroom'], data['name'], parent_permission: data['parent_permission'])
+  end
+
+  def as_json(_options = {})
+    {
+      type: 'Student',
+      id: @id,
+      name: @name,
+      age: @age,
+      parent_permission: @parent_permission,
+      classroom: @classroom
+    }
   end
 end

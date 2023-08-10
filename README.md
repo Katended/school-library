@@ -7,6 +7,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+    - [Future Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -31,8 +32,17 @@ This project featues basic functionality of a school library
 ### Key Features <a name="key-features"></a>
 
 - **Add new students or teachers**
-- **DAdd new books**
-- **Save records of who borrowed a given book and when**
+- **Add new books**
+- **Save data to JSON files**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Future Features <a name="future-features"></a>
+
+- **Add unit tests**
+- **Database storage**
+- **Consolidate data writers into one interface**
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -69,6 +79,13 @@ Go to the project directory.
 
 - GitHub: [@Katended](https://github.com/Katended/)
 - LinkedIn: [Katende David](https://www.linkedin.com/in/katendedavid/)
+
+👤 **Author2**
+👤 **Sandeep Ghosh**
+
+- GitHub: [@sandeep0912](https://github.com/mailsg/)
+- LinkedIn: [Sandeep Ghosh](https://www.linkedin.com/in/sandeep0912)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
