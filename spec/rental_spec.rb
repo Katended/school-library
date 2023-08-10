@@ -10,12 +10,10 @@ describe Rental do
       @rental = Rental.new('2020/12/12', @book, @person)
 
       # Act
-
       # Assert
       expect(@rental).to be_an_instance_of Rental
     end
   end
-
 
   context 'Rental object to JSON' do
     it 'Should be able to convere json string' do
