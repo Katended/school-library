@@ -36,7 +36,6 @@ describe Book do
     end
   end
 
-
   context 'convert book object to JSON' do
     it 'Should be able to return json ' do
       # Arrange
