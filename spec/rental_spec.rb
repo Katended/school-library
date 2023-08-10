@@ -25,7 +25,7 @@ describe Rental do
       # Act
       json_obj = @rental.to_json.to_s
       json_str = 'Rental'
-      
+
       # Assert
       expect(json_obj).to include(json_str)
     end
