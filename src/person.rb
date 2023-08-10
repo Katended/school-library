@@ -1,7 +1,7 @@
 require_relative 'nameable'
 require_relative 'capitalizedecorator'
 require_relative 'trimmerdecorator'
-require 'pry'
+
 class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age, :parent_permission
@@ -31,9 +31,7 @@ class Person < Nameable
     end
   end
 
-  private
-
-  def of_age?
+  def can_use_services?
     @age >= 18
   end
 

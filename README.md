@@ -11,6 +11,9 @@
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#test)
   - [👥 Authors ](#-authors-)
   - [🤝 Contributing ](#-contributing-)
   - [👋 Show your support ](#-show-your-support-)
@@ -70,7 +73,33 @@ Go to the project directory.
   cd school-library
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Install the required gems by running:
+
+```sh
+  bundle install
+```
+
+Install rspec:
+
+```sh
+ gem install rspec
+
+```
+
+
+### Usage
+
+```bash
+  ruby main.rb
+```
+
+### Run tests
+
+```bash
+
+  rspec spec
+
+```
 
 ## 👤 Authors <a name="author"></a>
 
