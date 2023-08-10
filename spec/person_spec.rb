@@ -20,20 +20,19 @@ describe Person do
     end
   end
 
-    context 'When using can_use_services? method' do
-        it 'Should be able to return false if under age and no parent permission' do
-        expect(@person.can_use_services?).to be false
-        end
-
-        it 'Should be able to return true if parent permission =true' do
-        expect(@unknown.can_use_services?).to be true
-        end
+  context 'When using can_use_services? method' do
+    it 'Should be able to return false if under age and no parent permission' do
+      expect(@person.can_use_services?).to be false
     end
 
-    context 'When using correct_name method' do
-        it 'Should be able to return \'Unknown\'' do
-        expect(@unknown.correct_name).to eql 'Unknown'
-        end
+    it 'Should be able to return true if parent permission =true' do
+      expect(@unknown.can_use_services?).to be true
     end
+  end
 
+  context 'When using correct_name method' do
+    it 'Should be able to return \'Unknown\'' do
+      expect(@unknown.correct_name).to eql 'Unknown'
+    end
+  end
 end

@@ -28,5 +28,4 @@ describe Student do
       expect(@student.classroom).to eql @classroom
     end
   end
-  
 end
